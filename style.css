@@ -1,0 +1,187 @@
+/* Commit Radio */
+* { box-sizing: border-box; }
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background: #f4f6f8;
+    color: #1f2937;
+}
+
+/* Header */
+
+header {
+    background: #111827;
+    color: white;
+
+    padding: 30px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 8px;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/*Main Content */
+
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+/* Sections*/
+
+section {
+    background: white;
+    margin-bottom: 25px;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+section h2 {
+    margin-top: 0;
+    color: #111827;
+}
+
+/* Repository Input */
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 65%;
+    padding: 12px;
+    border: 2px solid #9ca3af;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+input[type="text"]:focus {
+    border-color: #2563eb;
+}
+
+/* Buttons*/
+
+button {
+    padding: 11px 18px;
+    margin: 5px;
+    border: none;
+    border-radius: 6px;
+    background: #2563eb;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+button:focus,
+input:focus {
+    outline: 3px solid #f59e0b;
+    outline-offset: 2px;
+}
+
+/* Activity Area */
+
+#activity {
+    min-height: 100px;
+
+    padding: 15px;
+
+    background: #f9fafb;
+
+    border-left: 5px solid #2563eb;
+    border-radius: 5px;
+}
+
+/* Status Message */
+
+#status {
+    margin-top: 15px;
+    padding: 10px;
+    background: #eef2ff;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* Audio Controls */
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.controls button {
+    min-width: 100px;
+}
+
+/*Help */
+
+ul {
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+/* Footer */
+
+footer {
+    padding: 25px;
+    text-align: center;
+    background: #111827;
+    color: white;
+    margin-top: 40px;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    main {
+        width: 95%;
+    }
+
+    section {
+        padding: 18px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    .controls button {
+        width: 100%;
+        margin: 3px 0;
+    }
+}
