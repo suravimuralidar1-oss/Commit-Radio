@@ -16,67 +16,113 @@
 
 <body>
 
-    <!-- Skip link for keyboard and screen-reader users -->
+    <!-- Skip navigation for keyboard and screen-reader users -->
     <a class="skip-link" href="#main-content">
         Skip to main content
     </a>
 
 
+    <!-- ================================
+         HEADER
+         ================================= -->
+
     <header class="site-header">
         <div class="container">
+
             <h1>Commit Radio</h1>
 
             <p>
                 Listen to your GitHub repository updates through
                 accessible audio briefings.
             </p>
+
         </div>
     </header>
 
 
     <main id="main-content" class="container">
 
-        <!-- Repository-->
+
+        <!-- ================================
+             REPOSITORY
+             ================================= -->
 
         <section
             class="card"
             aria-labelledby="repo-heading"
         >
-            <h2 id="repo-heading">Repository</h2>
+
+            <h2 id="repo-heading">
+                Repository
+            </h2>
+
 
             <form id="loadForm">
 
-                <label for="repo">
-                    GitHub repository
-                </label>
+                <!-- GitHub token -->
 
-                <p id="repo-help">
-                    Enter a public repository as owner/repository,
-                    or paste its GitHub URL.
-                </p>
+                <div class="input-group">
 
-                <div class="input-row">
+                    <label for="token">
+                        GitHub Token
+                    </label>
+
+                    <p id="token-help">
+                        Optional for public repositories.
+                        A token can increase GitHub API rate limits.
+                    </p>
 
                     <input
-                        type="text"
-                        id="repo"
-                        name="repo"
-                        placeholder="owner/repository"
+                        type="password"
+                        id="token"
+                        name="token"
+                        placeholder="Optional GitHub token"
                         autocomplete="off"
-                        aria-describedby="repo-help"
+                        aria-describedby="token-help"
                     >
 
-                    <button
-                        type="submit"
-                        id="bLoad"
-                    >
-                        Load Repository
-                    </button>
+                </div>
+
+
+                <!-- Repository -->
+
+                <div class="input-group">
+
+                    <label for="repo">
+                        GitHub Repository
+                    </label>
+
+                    <p id="repo-help">
+                        Enter a public repository as
+                        owner/repository, or paste its GitHub URL.
+                    </p>
+
+                    <div class="input-row">
+
+                        <input
+                            type="text"
+                            id="repo"
+                            name="repo"
+                            placeholder="owner/repository"
+                            autocomplete="off"
+                            aria-describedby="repo-help"
+                        >
+
+                        <button
+                            type="submit"
+                            id="bLoad"
+                        >
+                            Load Repository
+                        </button>
+
+                    </div>
 
                 </div>
 
             </form>
 
+
+            <!-- Demo -->
 
             <div class="demo-row">
 
@@ -88,13 +134,14 @@
                 </button>
 
                 <p>
-                    No GitHub repository needed for the demo.
+                    No GitHub repository is needed for the demo.
                 </p>
 
             </div>
 
 
-            <!-- Live status for screen readers -->
+            <!-- Screen-reader live status -->
+
             <div
                 id="status"
                 class="status"
@@ -108,7 +155,9 @@
         </section>
 
 
-        <!-- Activity-->
+        <!-- ================================
+             REPOSITORY ACTIVITY
+             ================================= -->
 
         <section
             class="card"
@@ -131,7 +180,9 @@
         </section>
 
 
-        <!-- Current Player-->
+        <!-- ================================
+             CURRENT ACTIVITY
+             ================================= -->
 
         <section
             id="player"
@@ -151,7 +202,9 @@
         </section>
 
 
-        <!--  Audio Controls -->
+        <!-- ================================
+             AUDIO CONTROLS
+             ================================= -->
 
         <section
             class="card"
@@ -227,7 +280,8 @@
             </div>
 
 
-            <!-- Speech state -->
+            <!-- Speech status -->
+
             <div
                 id="speaking"
                 class="speech-status"
@@ -239,7 +293,8 @@
             </div>
 
 
-            <!-- Microphone state -->
+            <!-- Microphone status -->
+
             <div
                 id="micStatus"
                 class="speech-status"
@@ -253,7 +308,9 @@
         </section>
 
 
-        <!-- Speech Settings-->
+        <!-- ================================
+             SPEECH SETTINGS
+             ================================= -->
 
         <section
             class="card"
@@ -266,9 +323,12 @@
 
             <div class="settings-grid">
 
-                <div>
+                <!-- Speech rate -->
+
+                <div class="input-group">
+
                     <label for="rate">
-                        Speech speed
+                        Speech Speed
                     </label>
 
                     <input
@@ -284,12 +344,16 @@
                     <span id="rateLabel">
                         1.0×
                     </span>
+
                 </div>
 
 
-                <div>
+                <!-- Voice -->
+
+                <div class="input-group">
+
                     <label for="voice">
-                        Speech voice
+                        Speech Voice
                     </label>
 
                     <select id="voice">
@@ -297,6 +361,7 @@
                             Default voice
                         </option>
                     </select>
+
                 </div>
 
             </div>
@@ -304,7 +369,9 @@
         </section>
 
 
-        <!-- Details-->
+        <!-- ================================
+             DETAILS
+             ================================= -->
 
         <section
             class="card"
@@ -319,14 +386,16 @@
                 id="detail"
                 aria-live="polite"
             >
-                Select "Details" to hear or view additional
-                information about the current activity.
+                Select "Details" to view or hear
+                additional information about the current activity.
             </div>
 
         </section>
 
 
-        <!-- Filters-->
+        <!-- ================================
+             FILTERS
+             ================================= -->
 
         <section
             class="card"
@@ -337,23 +406,29 @@
                 Activity Filter
             </h2>
 
-            <label for="filter">
-                Show
-            </label>
+            <div class="input-group">
 
-            <select id="filter">
-                <option value="all">
-                    All activity
-                </option>
+                <label for="filter">
+                    Show
+                </label>
 
-                <option value="commit">
-                    Commits only
-                </option>
+                <select id="filter">
 
-                <option value="pr">
-                    Pull requests only
-                </option>
-            </select>
+                    <option value="all">
+                        All activity
+                    </option>
+
+                    <option value="commit">
+                        Commits only
+                    </option>
+
+                    <option value="pr">
+                        Pull requests only
+                    </option>
+
+                </select>
+
+            </div>
 
 
             <div class="checkbox-row">
@@ -372,7 +447,9 @@
         </section>
 
 
-        <!-- Keyboard & Voice Navigation-->
+        <!-- ================================
+             KEYBOARD + VOICE HELP
+             ================================= -->
 
         <section
             class="card"
@@ -388,6 +465,7 @@
                 Use the keyboard shortcuts below, or use voice
                 commands when speech recognition is available.
             </p>
+
 
             <div class="shortcut-list">
 
@@ -445,11 +523,9 @@
 
 
             <div class="voice-help">
-
                 <h3>
-                    Voice examples
+                    Voice Examples
                 </h3>
-
                 <ul>
                     <li>"Play"</li>
                     <li>"Next"</li>
@@ -460,41 +536,35 @@
                     <li>"What's new"</li>
                     <li>"Help"</li>
                 </ul>
-
             </div>
 
             <button
                 type="button"
                 id="bMic"
-                aria-label="Turn microphone voice navigation on or off"
+                aria-label="Turn voice navigation on or off"
             >
                 Turn Voice Navigation On
             </button>
-
         </section>
-
     </main>
 
 
+    <!-- ================================
+         FOOTER
+         ================================= -->
+
     <footer class="site-footer">
-
         <div class="container">
-
             <p>
                 Commit Radio — GitHub activity made accessible
                 through audio, keyboard, and voice navigation.
             </p>
-
         </div>
-
     </footer>
 
-
-    <!--
-        JavaScript load order is important.
-
-        Each file creates part of the CR namespace.
-        app.js is loaded last because it coordinates everything.
+    <!--JAVASCRIPT
+         IMPORTANT:
+         app.js must be loaded LAST.
     -->
     <script src="js/core.js"></script>
     <script src="js/api.js"></script>
