@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Commit Radio</title>
+
+    <!-- Accessibility -->
+    <meta name="description"
+          content="Commit Radio turns GitHub repository activity into accessible audio briefings.">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Commit Radio</h1>
+        <p>Listen to your GitHub repository updates.</p>
+    </header>
+
+    <main>
+
+        <!-- Repository input -->
+        <section aria-labelledby="repo-heading">
+            <h2 id="repo-heading">Repository</h2>
+
+            <label for="repo-input">
+                Enter a public GitHub repository:
+            </label>
+
+            <div>
+                <input
+                    type="text"
+                    id="repo-input"
+                    name="repository"
+                    placeholder="owner/repository"
+                    autocomplete="off"
+                >
+
+                <button
+                    type="button"
+                    id="load-button"
+                >
+                    Load Repository
+                </button>
+            </div>
+
+            <!-- Screen readers will announce changes here -->
+            <div
+                id="status"
+                role="status"
+                aria-live="polite"
+                aria-atomic="true"
+            >
+                Enter a repository to get started.
+            </div>
+        </section>
+
+
+        <!-- Repository activity -->
+        <section aria-labelledby="activity-heading">
+            <h2 id="activity-heading">Repository Activity</h2>
+
+            <div id="activity">
+                <p>No repository loaded yet.</p>
+            </div>
+        </section>
+
+
+        <!-- Audio controls -->
+        <section aria-labelledby="controls-heading">
+            <h2 id="controls-heading">Audio Controls</h2>
+
+            <div class="controls">
+
+                <button
+                    type="button"
+                    id="previous-button"
+                    aria-label="Previous commit"
+                >
+                    Previous
+                </button>
+
+                <button
+                    type="button"
+                    id="play-button"
+                    aria-label="Play briefing"
+                >
+                    Play
+                </button>
+
+                <button
+                    type="button"
+                    id="pause-button"
+                    aria-label="Pause briefing"
+                >
+                    Pause
+                </button>
+
+                <button
+                    type="button"
+                    id="next-button"
+                    aria-label="Next commit"
+                >
+                    Next
+                </button>
+
+                <button
+                    type="button"
+                    id="repeat-button"
+                    aria-label="Repeat current commit"
+                >
+                    Repeat
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- Keyboard instructions -->
+        <section aria-labelledby="help-heading">
+            <h2 id="help-heading">Keyboard & Voice Navigation</h2>
+
+            <p>
+                Use the buttons above with your keyboard, or use voice
+                commands when speech recognition is available.
+            </p>
+
+            <ul>
+                <li>Tab — move between controls</li>
+                <li>Enter or Space — activate a button</li>
+                <li>Voice command: "next commit"</li>
+                <li>Voice command: "previous commit"</li>
+                <li>Voice command: "repeat"</li>
+            </ul>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Commit Radio — GitHub activity, made accessible through audio.</p>
+    </footer>
+
+
+    <!-- JavaScript -->
+    <!-- Keep these at the end so the HTML loads first. -->
+    <script src="js/api.js"></script>
+    <script src="js/core.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
