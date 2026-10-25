@@ -1,10 +1,10 @@
-# Commit Radio 📻💻
+# Commit Radio 
 
 Commit Radio is a web application that turns GitHub repository commit histories into an interactive audio-visual experience. Listen to code changes as they happen, powered by speech synthesis and live repository data.
 
 ---
 
-## 👥 Team & Responsibilities
+##  Team & Responsibilities
 
 | Person | Role & Assigned Files |
 | :--- | :--- |
@@ -15,7 +15,7 @@ Commit Radio is a web application that turns GitHub repository commit histories 
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 1. **Clone the repository:**
    ```bash
