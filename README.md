@@ -4,7 +4,7 @@ Commit Radio is a web application that turns GitHub repository commit histories 
 
 ---
 
-##  Team & Responsibilities
+##  Team  L & Responsibilities
 
 | Person | Role & Assigned Files |
 | :--- | :--- |
